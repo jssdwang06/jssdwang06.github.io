@@ -59,11 +59,50 @@ function sidebarPaddingR () {
   }
 }
 
+// iPadOS
+function isIpad () {
+  return navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1
+}
+
+function isTMobile () {
+  const ua = navigator.userAgent
+  const pa = /iPad|iPhone|iPod|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g
+  return window.screen.width < 992 && pa.test(ua)
+}
+
+function isMobile () {
+  return this.isIpad() || this.isTMobile()
+}
+
+function isDesktop () {
+  return !this.isMobile()
+}
+
 function scrollToDest (name, offset = 0) {
   const scrollOffset = $(name).offset()
   $('body,html').animate({
     scrollTop: scrollOffset.top - offset
   })
+};
+
+function loadScript (url, callback) {
+  const script = document.createElement('script')
+  script.type = 'text/javascript'
+  if (script.readyState) { // IE
+    script.onreadystatechange = function () {
+      if (script.readyState === 'loaded' ||
+        script.readyState === 'complete') {
+        script.onreadystatechange = null
+        callback()
+      }
+    }
+  } else { // Others
+    script.onload = function () {
+      callback()
+    }
+  }
+  script.src = url
+  document.body.appendChild(script)
 };
 
 function snackbarShow (text, showAction, duration) {
@@ -108,24 +147,12 @@ const initJustifiedGallery = function (selector) {
   })
 }
 
-const diffDate = d => {
-  const dateNow = new Date()
-  const datePost = new Date(d.replace(/-/g, '/'))
-  const dateDiff = dateNow.getTime() - datePost.getTime()
-  const dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000))
-  return dayDiff
-}
-
-const loadComment = (dom, callback) => {
-  if ('IntersectionObserver' in window) {
-    const observerItem = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        callback()
-        observerItem.disconnect()
-      }
-    }, { threshold: [0] })
-    observerItem.observe(dom)
-  } else {
-    callback()
+/**
+ * lazyload
+ */
+if (GLOBAL_CONFIG.islazyload) {
+  window.lazyLoadOptions = {
+    elements_selector: 'img',
+    threshold: 0
   }
 }
