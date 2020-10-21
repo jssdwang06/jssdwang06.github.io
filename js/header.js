@@ -20,7 +20,7 @@ function search() {
             name: "千亿",
             img: "url('/images/search_icon.png')  -80px -25px",
             position: "0px -40px",
-            url: "https://cn.bing.com/search?q="
+            url: "https://w.qianyix.com/index.php?q="
         }, {
             name: "B站",
             img: "url('/images/search_icon.png') -105px -125px",
