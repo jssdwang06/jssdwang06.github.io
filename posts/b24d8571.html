@@ -1,0 +1,437 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>2021【保姆级教程】Manjaro系统美化和软件安装 | 筱筱琪</title><meta name="keywords" content="Manjaro,软件安装,系统美化"><meta name="author" content="筱筱琪"><meta name="copyright" content="筱筱琪"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="我和manjaro（二）  仿Mac最终成品图 系统美化：每个人喜好不一样，大家根据自己的喜好进行美化即可。 包括主题、图标、光标、Shell。 主题 在～目录下创建.themes文件夹 下载WhiteSur Gtk Theme主题压缩包 解压主题压缩包到.themes文件夹  图标 在～目录下创建.icons文件夹 下载McMojave-circle图标压缩包 解压图标压缩包到.icons文件夹">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2021【保姆级教程】Manjaro系统美化和软件安装">
+<meta property="og:url" content="http://example.com/posts/b24d8571.html">
+<meta property="og:site_name" content="筱筱琪">
+<meta property="og:description" content="我和manjaro（二）  仿Mac最终成品图 系统美化：每个人喜好不一样，大家根据自己的喜好进行美化即可。 包括主题、图标、光标、Shell。 主题 在～目录下创建.themes文件夹 下载WhiteSur Gtk Theme主题压缩包 解压主题压缩包到.themes文件夹  图标 在～目录下创建.icons文件夹 下载McMojave-circle图标压缩包 解压图标压缩包到.icons文件夹">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/1.png">
+<meta property="article:published_time" content="2022-07-11T10:30:02.000Z">
+<meta property="article:modified_time" content="2022-07-11T10:37:32.491Z">
+<meta property="article:author" content="筱筱琪">
+<meta property="article:tag" content="Manjaro">
+<meta property="article:tag" content="软件安装">
+<meta property="article:tag" content="系统美化">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/1.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/b24d8571"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 筱筱琪","link":"链接: ","source":"来源: 筱筱琪","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2021【保姆级教程】Manjaro系统美化和软件安装',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2022-07-11 13:37:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/xxq.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/1.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">筱筱琪</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">2021【保姆级教程】Manjaro系统美化和软件安装</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-11T10:30:02.000Z" title="发表于 2022-07-11 13:30:02">2022-07-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-11T10:37:32.491Z" title="更新于 2022-07-11 13:37:32">2022-07-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Manjaro/">Manjaro</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="我和manjaro（二）"><a href="#我和manjaro（二）" class="headerlink" title="我和manjaro（二）"></a>我和manjaro（二）</h2><p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/0.png"></p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/1.png"></p>
+<p>仿Mac最终成品图</p>
+<h2 id="系统美化："><a href="#系统美化：" class="headerlink" title="系统美化："></a>系统美化：</h2><p>每个人喜好不一样，大家根据自己的喜好进行美化即可。</p>
+<p>包括主题、图标、光标、Shell。</p>
+<h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><ul>
+<li>在<code>～</code>目录下创建<code>.themes</code>文件夹</li>
+<li>下载<a target="_blank" rel="noopener" href="https://www.gnome-look.org/p/1403328/">WhiteSur Gtk Theme</a>主题压缩包</li>
+<li>解压主题压缩包到<code>.themes</code>文件夹</li>
+</ul>
+<h3 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h3><ul>
+<li>在<code>～</code>目录下创建<code>.icons</code>文件夹</li>
+<li>下载<a target="_blank" rel="noopener" href="https://www.pling.com/s/Gnome/p/1305429">McMojave-circle</a>图标压缩包</li>
+<li>解压图标压缩包到<code>.icons</code>文件夹</li>
+</ul>
+<h3 id="光标"><a href="#光标" class="headerlink" title="光标"></a>光标</h3><ul>
+<li>下载<a target="_blank" rel="noopener" href="https://github.com/ful1e5/apple_cursor">macOS Big Sur </a>光标压缩包</li>
+<li>解压光标压缩包到<code>.icons</code>文件夹</li>
+</ul>
+<h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><p>刚解压的主题包中已包含<code>Shell</code>主题</p>
+<h3 id="标题栏"><a href="#标题栏" class="headerlink" title="标题栏"></a>标题栏</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">优化（tweak）-&gt;窗口标题栏-&gt;标题栏按钮-&gt;放置-&gt;左</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/7.png"></p>
+<h3 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h3><p>在<code>优化（tweak）-&gt;外观</code>中依次设置即可，可参考我的设置。</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/2.png"></p>
+<h2 id="系统设置"><a href="#系统设置" class="headerlink" title="系统设置"></a>系统设置</h2><h3 id="配置镜像源"><a href="#配置镜像源" class="headerlink" title="配置镜像源"></a>配置镜像源</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">sudo pacman-mirrors -i -c China -m rank # 更新镜像源排名，选择延迟小的。</span><br></pre></td></tr></table></figure>
+
+<p>然后修改<code>/etc/pacman.conf</code>，在最后一行添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly </span><br><span class="line">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span><br></pre></td></tr></table></figure>
+
+<p>终端运行以下代码更新镜像源和系统：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">sudo pacman -Sy archlinuxcn-keyring # 导入密匙</span><br><span class="line">sudo pacman -Syyu # 更新系统</span><br></pre></td></tr></table></figure>
+
+<h3 id="单击打开文件"><a href="#单击打开文件" class="headerlink" title="单击打开文件"></a>单击打开文件</h3><p>打开<code>文件</code>点击右上角的三个点选择<code>首选项</code></p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/3.png"></p>
+<p>选择<code>Single click</code>即可</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/4.png"></p>
+<h3 id="更改grub引导界面"><a href="#更改grub引导界面" class="headerlink" title="更改grub引导界面"></a>更改grub引导界面</h3><blockquote>
+<p>GNU GRUB（GRand Unified Bootloader简称“GRUB”）是一个多操作系统启动程序，它允许用户可以在计算机内同时拥有多个操作系统，并在计算机启动时选择希望运行的操作系统。</p>
+</blockquote>
+<p>自带的grub有点丑，且分辨率还比较低，在<a target="_blank" rel="noopener" href="https://www.gnome-look.org/browse/cat/109/ord/rating/">Grub Themes</a>下载自己喜欢的主题，这里我下载的是<code>Grub-theme-vimix</code>，下载好后解压，进入解压后的目录执行以下安装命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">sudo sh install.sh</span><br></pre></td></tr></table></figure>
+
+<p>稍等片刻即可安装成功，重启后发现引导界面已成功更改。</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/8.png"></p>
+<h3 id="为terminal设置快捷键"><a href="#为terminal设置快捷键" class="headerlink" title="为terminal设置快捷键"></a>为<code>terminal</code>设置快捷键</h3><p>打开<code>设置-&gt;键盘快捷键</code>，找到自定义快捷键，点击<code>+</code>，设置如下：</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/5.png"></p>
+<h2 id="软件包管理器"><a href="#软件包管理器" class="headerlink" title="软件包管理器"></a>软件包管理器</h2><h3 id="pacman"><a href="#pacman" class="headerlink" title="pacman"></a><code>pacman</code></h3><p>用 C 语言编写的软件包管理器，安装需要加<code>sudo</code></p>
+<p>详细使用方法请参考<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Pacman_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85">pacman</a></p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>sudo pacman -S</td>
+<td>安装或升级单个软件包</td>
+</tr>
+<tr>
+<td>sudo pacman -Syu</td>
+<td>升级软件包和整个系统</td>
+</tr>
+<tr>
+<td>sudo pacman -R</td>
+<td>删除单个软件包保留依赖</td>
+</tr>
+<tr>
+<td>sudo pacman -Rsu</td>
+<td>删除软件包和所有依赖</td>
+</tr>
+<tr>
+<td>sudo pacman -Scc</td>
+<td>删除缓存中的全部文件</td>
+</tr>
+<tr>
+<td>sudo pacman -Qs</td>
+<td>查询已安装的软件包</td>
+</tr>
+</tbody></table>
+<h3 id="yay"><a href="#yay" class="headerlink" title="yay"></a><code>yay</code></h3><p>用 Go 编写的 AUR 助手，安装不需要加<code>sudo</code>。</p>
+<p>详细使用方式请参考<a target="_blank" rel="noopener" href="https://github.com/Jguer/yay">yay</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">sudo pacman -S yay</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>yay -S</td>
+<td>安装包</td>
+</tr>
+<tr>
+<td>yay -Rns</td>
+<td>删除包</td>
+</tr>
+<tr>
+<td>yay -Qi</td>
+<td>查询安装的版本</td>
+</tr>
+<tr>
+<td>yay -Pc</td>
+<td>打印系统统计信息</td>
+</tr>
+<tr>
+<td>yay -Syu</td>
+<td>升级所有已安装的包</td>
+</tr>
+<tr>
+<td>yay -Yc</td>
+<td>清除不需要的依赖项</td>
+</tr>
+</tbody></table>
+<h2 id="常用软件："><a href="#常用软件：" class="headerlink" title="常用软件："></a>常用软件：</h2><p>每个人使用的场景不同，以下软件按需安装即可。</p>
+<p>为避免接下来安装过程中提示<code>Cannot find the strip binary required for object fil...</code>，先安装 <code>fakeroot、binutils</code> 等打包基本工具。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">sudo pacman -S base-devel</span><br></pre></td></tr></table></figure>
+
+<h3 id="中文输入法"><a href="#中文输入法" class="headerlink" title="中文输入法"></a>中文输入法</h3><p>先安装<code>fcitix5</code>全家桶（fcitx5，fcitx5-qt，fcitx5-gtk，fcitx5-configtool）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">sudo pacman -S fcitx5-im</span><br></pre></td></tr></table></figure>
+
+<p>再安装中文支持</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">sudo pacman -S fcitx5-chinese-addons</span><br></pre></td></tr></table></figure>
+
+<p>配置环境</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">vi ~/.pam_environment</span><br></pre></td></tr></table></figure>
+
+<p>写入以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">INPUT_METHOD  DEFAULT=fcitx5</span><br><span class="line">GTK_IM_MODULE DEFAULT=fcitx5</span><br><span class="line">QT_IM_MODULE  DEFAULT=fcitx5</span><br><span class="line">XMODIFIERS    DEFAULT=\@im=fcitx5</span><br></pre></td></tr></table></figure>
+
+<p>重启电脑，点击右上角输入法选择设置，添加拼音，点击OK即可。</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/10.png"></p>
+<p>输入法切换：<code>Ctrl</code> + <code>Shift</code>，在中文输入法下可以用<code>Left Shift</code>切换到英文。</p>
+<h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a><code>Vim</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S vim</span><br></pre></td></tr></table></figure>
+
+<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a><code>zsh</code></h3><h4 id="查看系统所有shell"><a href="#查看系统所有shell" class="headerlink" title="查看系统所有shell"></a>查看系统所有<code>shell</code></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">cat /etc/shells</span><br></pre></td></tr></table></figure>
+
+<h4 id="更改默认shell为zsh"><a href="#更改默认shell为zsh" class="headerlink" title="更改默认shell为zsh"></a>更改默认<code>shell</code>为<code>zsh</code></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">chsh -s /usr/bin/zsh</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装ohmyzsh"><a href="#安装ohmyzsh" class="headerlink" title="安装ohmyzsh"></a>安装<code>ohmyzsh</code></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><h5 id="zsh-syntax-highlighting：语法高亮"><a href="#zsh-syntax-highlighting：语法高亮" class="headerlink" title="zsh-syntax-highlighting：语法高亮"></a><code>zsh-syntax-highlighting</code>：语法高亮</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM&#125;/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
+
+<h5 id="autosuggestions：记住用过的命令"><a href="#autosuggestions：记住用过的命令" class="headerlink" title="autosuggestions：记住用过的命令"></a><code>autosuggestions</code>：记住用过的命令</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h4><p>这里使用的主题是<code>powerlevel10k</code>，详细信息可从<a target="_blank" rel="noopener" href="https://github.com/romkatv/powerlevel10k">Github</a>找到。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/themes/powerlevel10k</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">sudo vim ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>详情参考以下内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">#更改ZSH_THEME</span><br><span class="line">ZSH_THEME=&quot;powerlevel10k/powerlevel10k&quot;</span><br><span class="line"></span><br><span class="line">#更改plugins</span><br><span class="line">plugins=(git</span><br><span class="line">      zsh-autosuggestions</span><br><span class="line">      zsh-syntax-highlighting</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">#刷新配置</span><br><span class="line">source ~/.zshrc</span><br><span class="line"></span><br><span class="line">#打开终端按提示进行配置即可</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/26.png"></p>
+<h3 id="安装Typora"><a href="#安装Typora" class="headerlink" title="安装Typora"></a>安装<code>Typora</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S typora</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Notion"><a href="#安装Notion" class="headerlink" title="安装Notion"></a>安装<code>Notion</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S notion-app</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Atom"><a href="#安装Atom" class="headerlink" title="安装Atom"></a>安装<code>Atom</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S atom</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Vscode"><a href="#安装Vscode" class="headerlink" title="安装Vscode"></a>安装<code>Vscode</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S visual-studio-code-bin</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Picgo"><a href="#安装Picgo" class="headerlink" title="安装Picgo"></a>安装<code>Picgo</code></h3><p>配合<code>Github</code>搭建图床</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S picgo-appimage</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Okular"><a href="#安装Okular" class="headerlink" title="安装Okular"></a>安装<code>Okular</code></h3><p>PDF阅读器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S okular</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装网易云"><a href="#安装网易云" class="headerlink" title="安装网易云"></a>安装<code>网易云</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MARKDOWN</span><br><span class="line">yay -S netease-cloud-music</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Spotify"><a href="#安装Spotify" class="headerlink" title="安装Spotify"></a>安装<code>Spotify</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S spotify</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装flame截图"><a href="#安装flame截图" class="headerlink" title="安装flame截图"></a>安装<code>flame截图</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MARKDOWN</span><br><span class="line">yay -S flameshot</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置flameshot："><a href="#设置flameshot：" class="headerlink" title="设置flameshot："></a>设置<code>flameshot</code>：</h4><p>打开<code>flameshot</code>设置页</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CODE</span><br><span class="line">flameshot config</span><br></pre></td></tr></table></figure>
+
+<p>按自己的需要调整即可，这里我取消了铅笔、直线、实心矩形等。</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/11.png"></p>
+<h4 id="设置快捷键"><a href="#设置快捷键" class="headerlink" title="设置快捷键"></a>设置快捷键</h4><p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/12.png"></p>
+<h3 id="安装Chrome"><a href="#安装Chrome" class="headerlink" title="安装Chrome"></a>安装<code>Chrome</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S google-chrome</span><br></pre></td></tr></table></figure>
+
+<p>当我们打开Chrome时发现，发现标题栏会显得很突兀</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/13.png"></p>
+<p>这时我们只需要，右键标签栏空白处勾选使用系统标题栏和边框即可。</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/14.png"></p>
+<h3 id="安装XDM"><a href="#安装XDM" class="headerlink" title="安装XDM"></a>安装<code>XDM</code></h3><p>去<a target="_blank" rel="noopener" href="https://xtremedownloadmanager.com/#downloads">XDM官网</a>下载最新版本的安装包（目前最新版本为7.2.11），解压后进入解压目录在终端中执行安装命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">su -c ./install.sh  </span><br></pre></td></tr></table></figure>
+
+<p>安装完成打开<code>XDM</code>，按照提示安装对应浏览器扩展即可，默认下载到<code>/home/用户名/Downloads</code>。</p>
+<h3 id="安装Edge"><a href="#安装Edge" class="headerlink" title="安装Edge"></a>安装<code>Edge</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S microsoft-edge-dev-bin</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装anki"><a href="#安装anki" class="headerlink" title="安装anki"></a>安装<code>anki</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S anki</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装xmind2020"><a href="#安装xmind2020" class="headerlink" title="安装xmind2020"></a>安装<code>xmind2020</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S xmind-2020</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装微信"><a href="#安装微信" class="headerlink" title="安装微信"></a>安装<code>微信</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S deepin-wine-wechat</span><br></pre></td></tr></table></figure>
+
+<p>切换到<code>deepin-wine</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">/opt/apps/com.qq.weixin.deepin/files/run.sh -d</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装teams"><a href="#安装teams" class="headerlink" title="安装teams"></a>安装<code>teams</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S teams</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装blechbit"><a href="#安装blechbit" class="headerlink" title="安装blechbit"></a>安装<code>blechbit</code></h3><p>清理磁盘空间</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S bleachbit</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Albert"><a href="#安装Albert" class="headerlink" title="安装Albert"></a>安装<code>Albert</code></h3><p>软件启动器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S albert</span><br></pre></td></tr></table></figure>
+
+<h4 id="软件设置："><a href="#软件设置：" class="headerlink" title="软件设置："></a>软件设置：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hotkey`为更改快捷键为`Ctrl+空格</span><br></pre></td></tr></table></figure>
+
+<p>勾选 <code>Autostart on login</code>：开机自启</p>
+<p>在<code>Extensions</code>里勾选所需要的部件，我这里勾选的是<code>Applications</code>，<code>Files</code>，<code>System</code>，<code>WebSearch</code></p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/15.png"></p>
+<p>最后按需设置<code>WebSearch</code>里的搜索引擎，可以参考下图我的设置。</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/16.png"></p>
+<h4 id="使用方式："><a href="#使用方式：" class="headerlink" title="使用方式："></a>使用方式：</h4><p>比如我们想在<code>Github</code>里面搜索<code>numpy</code>，我们只需要以下三步：</p>
+<ol>
+<li>快捷键<code>Ctrl+空格</code>启动<code>Albert</code>搜索框。</li>
+<li>在搜索框中输入<code>git numpy</code>（注意中间有个空格）。<br><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/17.png"></li>
+<li>回车即可自动打开浏览器，跳转GitHub界面。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/18.png"></p>
+<h3 id="安装Easystroke"><a href="#安装Easystroke" class="headerlink" title="安装Easystroke"></a>安装<code>Easystroke</code></h3><p>鼠标手势，(顺便推荐Win下的<code>MouseInc</code>)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S easystroke</span><br></pre></td></tr></table></figure>
+
+<h4 id="软件设置"><a href="#软件设置" class="headerlink" title="软件设置"></a>软件设置</h4><p>默认按键为鼠标<code>中键</code>（<code>Button2</code>）这里更改成了鼠标<code>右键</code>（<code>Button3</code>），勾选<code>Autostart easystroke</code>开机自启动，在返回到<code>Actions</code>按需添加手势即可。</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/19.png"></p>
+<h4 id="常用手势"><a href="#常用手势" class="headerlink" title="常用手势"></a>常用手势</h4><p>按需设置即可，同时附上我设置的手势，Super键是左下角win键）。<br><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/20.png"></p>
+<h3 id="安装Wps"><a href="#安装Wps" class="headerlink" title="安装Wps"></a>安装<code>Wps</code></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">MARKDOWN</span><br><span class="line">#避免安装完后打开Wps提示字体不存在，这里建议先安装字体</span><br><span class="line"></span><br><span class="line">#安装字体</span><br><span class="line">yay -S wps-office wps-office-mui-zh-cn wps-office-fonts ttf-wps-fonts </span><br><span class="line"></span><br><span class="line">#安装Times new roman字体</span><br><span class="line">yay -S ttf-ms-fonts</span><br><span class="line"></span><br><span class="line">#安装wps</span><br><span class="line">yay -S wps-office-cn</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Latex"><a href="#安装Latex" class="headerlink" title="安装Latex"></a>安装Latex</h3><p>目前已转在线的Overleaf，开箱即用。</p>
+<p>还没有注册的小伙伴，快点击<a target="_blank" rel="noopener" href="https://www.overleaf.com/?r=2b6dc4e3&rm=d&rs=b">链接</a>进行注册吧。</p>
+<p>以下安装过程亦可放心食用。</p>
+<hr>
+<h4 id="安装图形化安装界面"><a href="#安装图形化安装界面" class="headerlink" title="安装图形化安装界面"></a>安装图形化安装界面</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">yay -S tk</span><br></pre></td></tr></table></figure>
+
+<h4 id="挂载ISO"><a href="#挂载ISO" class="headerlink" title="挂载ISO"></a>挂载<code>ISO</code></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">sudo mount -o loop /path/to/texlive2020.iso /mnt</span><br></pre></td></tr></table></figure>
+
+<p>如果提示：mount: &#x2F;mnt: 警告：设备写保护，使用只读方式挂载，忽略即可。</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">cd /mnt</span><br><span class="line">sudo ./install-tl--gui</span><br></pre></td></tr></table></figure>
+
+<p>去除不需要的语言和<code>TeXworks editor</code>，点击安装</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/21.png"></p>
+<p>安装时间会有点长，请耐心等待安装完成。</p>
+<h4 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">sudo vim ~/.zshrc</span><br><span class="line"># 在文件末尾添加</span><br><span class="line">export MANPATH=/usr/local/texlive/2020/texmf-dist/doc/man:$MANPATH </span><br><span class="line">export INFOPATH=/usr/local/texlive/2020/texmf-dist/doc/info:$INFOPATH</span><br><span class="line">export PATH=/usr/local/texlive/2020/bin/x86_64-linux:$PATH</span><br></pre></td></tr></table></figure>
+
+<h4 id="测试环境变量"><a href="#测试环境变量" class="headerlink" title="测试环境变量"></a>测试环境变量</h4><p>在终端输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">tex --version</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/22.png"></p>
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TEX</span><br><span class="line">tex &#x27;\empty Hello world!\bye&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>输出以下内容即生效</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/23.png"></p>
+<h4 id="设置清华镜像为更新源"><a href="#设置清华镜像为更新源" class="headerlink" title="设置清华镜像为更新源"></a>设置清华镜像为更新源</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">sudo tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet</span><br></pre></td></tr></table></figure>
+
+<h4 id="更新tlmgr和宏包"><a href="#更新tlmgr和宏包" class="headerlink" title="更新tlmgr和宏包"></a>更新tlmgr和宏包</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">sudo tlmgr update --self --all</span><br></pre></td></tr></table></figure>
+
+<h4 id="编译俄语报错"><a href="#编译俄语报错" class="headerlink" title="编译俄语报错"></a>编译俄语报错</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Package fontspec: The font &quot;CMU Serif&quot; cannot be found.</span><br></pre></td></tr></table></figure>
+
+<p>需要下载<a target="_blank" rel="noopener" href="https://sourceforge.net/projects/cm-unicode/">Computer Modern Unicode fonts</a>字体，安装完成后更新字体缓存，即可正常编译。</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/24.png"></p>
+<h4 id="安装字体"><a href="#安装字体" class="headerlink" title="安装字体"></a>安装字体</h4><p>复制要安装的<code>字体文件（ttf）</code>到<code>/usr/share/fonts/TTF</code>文件夹:</p>
+<p>刷新字体:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">fc-cache -fv</span><br></pre></td></tr></table></figure>
+
+<h4 id="更新字体缓存"><a href="#更新字体缓存" class="headerlink" title="更新字体缓存"></a>更新字体缓存</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BASH</span><br><span class="line">cd /usr/share/fonts/ #字体的位置</span><br><span class="line">sudo fc-cache -v -f  #更新缓存</span><br></pre></td></tr></table></figure>
+
+<h3 id="Gnome插件"><a href="#Gnome插件" class="headerlink" title="Gnome插件"></a>Gnome插件</h3><p>插件可以在<a target="_blank" rel="noopener" href="https://extensions.gnome.org/">Gnome Extensions</a>下载安装</p>
+<p>推荐几个插件</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/97/coverflow-alt-tab/">Coverflow Alt-Tab</a> 切换应用效果美化</li>
+<li><a href="https://link.zhihu.com/?target=https://extensions.gnome.org/extension/104/netspeed/">NetSpeed</a> 显示实时网速</li>
+<li><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/3210/compiz-windows-effect/">Compiz windows effect</a> 窗口切换效果</li>
+<li><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/2/move-clock/">Frippery Move Clock</a>将时钟位置向右移动</li>
+<li><a target="_blank" rel="noopener" href="https://extensions.gnome.org/extension/1319/gsconnect/">GsConnect</a> Pc手机协同工具，详细使用方法请参考<a target="_blank" rel="noopener" href="https://userbase.kde.org/KDE_Connect/Tutorials/Useful_commands">Connect使用</a>，也可以参考我的设置：</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/25.png"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://cubercsl.cn/configuration/manjaro.html">Manjaro KDE 瞎折腾</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903779981082638">Manjaro 美化与调优</a></p>
+<p><a target="_blank" rel="noopener" href="https://oscarcx123.github.io/tech/manjaro-xfce-setup.html#Win10%E6%9B%B4%E6%96%B0%E5%90%8E%E4%BF%AE%E5%A4%8Dgrub">Manjaro XFCE 安装和调教</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.blurredcode.com/2020/08/linux%E4%B8%8Btexlive%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8C%97/">Manjaro下texlive环境配置指北</a></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>至此，我们已经完成了系统的美化和常用软件的安装，本篇教程也到此结束了。</p>
+<p>下篇文章会介绍如何在<code>Manjaro</code>下搭建<code>hexo</code>个人博客，那让我们下次见咯～</p>
+<p>最后，感谢你看到这里！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">筱筱琪</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/b24d8571.html">http://example.com/posts/b24d8571.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">筱筱琪</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Manjaro/">Manjaro</a><a class="post-meta__tags" href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">软件安装</a><a class="post-meta__tags" href="/tags/%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96/">系统美化</a></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/1.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/52cd05e.html"><img class="next-cover" src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E5%AE%89%E8%A3%85/35.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2021【保姆级教程】Win+Manjaro双系统双硬盘安装</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/52cd05e.html" title="2021【保姆级教程】Win+Manjaro双系统双硬盘安装"><img class="cover" src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E5%AE%89%E8%A3%85/35.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-10</div><div class="title">2021【保姆级教程】Win+Manjaro双系统双硬盘安装</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/xxq.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">筱筱琪</div><div class="author-info__description">Stay hungry | Stay foolish</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jssdwang06"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jssdwang06" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E5%92%8Cmanjaro%EF%BC%88%E4%BA%8C%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">我和manjaro（二）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%BE%8E%E5%8C%96%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">系统美化：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E6%A0%87"><span class="toc-number">2.2.</span> <span class="toc-text">图标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E6%A0%87"><span class="toc-number">2.3.</span> <span class="toc-text">光标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shell"><span class="toc-number">2.4.</span> <span class="toc-text">Shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E9%A2%98%E6%A0%8F"><span class="toc-number">2.5.</span> <span class="toc-text">标题栏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%8E%E5%8C%96"><span class="toc-number">2.6.</span> <span class="toc-text">美化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">系统设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-number">3.1.</span> <span class="toc-text">配置镜像源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%87%BB%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6"><span class="toc-number">3.2.</span> <span class="toc-text">单击打开文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9grub%E5%BC%95%E5%AF%BC%E7%95%8C%E9%9D%A2"><span class="toc-number">3.3.</span> <span class="toc-text">更改grub引导界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BAterminal%E8%AE%BE%E7%BD%AE%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">3.4.</span> <span class="toc-text">为terminal设置快捷键</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">软件包管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pacman"><span class="toc-number">4.1.</span> <span class="toc-text">pacman</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yay"><span class="toc-number">4.2.</span> <span class="toc-text">yay</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">常用软件：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95"><span class="toc-number">5.1.</span> <span class="toc-text">中文输入法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim"><span class="toc-number">5.2.</span> <span class="toc-text">Vim</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zsh"><span class="toc-number">5.3.</span> <span class="toc-text">zsh</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E6%89%80%E6%9C%89shell"><span class="toc-number">5.3.1.</span> <span class="toc-text">查看系统所有shell</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4shell%E4%B8%BAzsh"><span class="toc-number">5.3.2.</span> <span class="toc-text">更改默认shell为zsh</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ohmyzsh"><span class="toc-number">5.3.3.</span> <span class="toc-text">安装ohmyzsh</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-number">5.3.4.</span> <span class="toc-text">安装插件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#zsh-syntax-highlighting%EF%BC%9A%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE"><span class="toc-number">5.3.4.1.</span> <span class="toc-text">zsh-syntax-highlighting：语法高亮</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#autosuggestions%EF%BC%9A%E8%AE%B0%E4%BD%8F%E7%94%A8%E8%BF%87%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-number">5.3.4.2.</span> <span class="toc-text">autosuggestions：记住用过的命令</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98"><span class="toc-number">5.3.5.</span> <span class="toc-text">修改主题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">5.3.6.</span> <span class="toc-text">修改配置文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Typora"><span class="toc-number">5.4.</span> <span class="toc-text">安装Typora</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Notion"><span class="toc-number">5.5.</span> <span class="toc-text">安装Notion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Atom"><span class="toc-number">5.6.</span> <span class="toc-text">安装Atom</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Vscode"><span class="toc-number">5.7.</span> <span class="toc-text">安装Vscode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Picgo"><span class="toc-number">5.8.</span> <span class="toc-text">安装Picgo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Okular"><span class="toc-number">5.9.</span> <span class="toc-text">安装Okular</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%BD%91%E6%98%93%E4%BA%91"><span class="toc-number">5.10.</span> <span class="toc-text">安装网易云</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Spotify"><span class="toc-number">5.11.</span> <span class="toc-text">安装Spotify</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85flame%E6%88%AA%E5%9B%BE"><span class="toc-number">5.12.</span> <span class="toc-text">安装flame截图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEflameshot%EF%BC%9A"><span class="toc-number">5.12.1.</span> <span class="toc-text">设置flameshot：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">5.12.2.</span> <span class="toc-text">设置快捷键</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Chrome"><span class="toc-number">5.13.</span> <span class="toc-text">安装Chrome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85XDM"><span class="toc-number">5.14.</span> <span class="toc-text">安装XDM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Edge"><span class="toc-number">5.15.</span> <span class="toc-text">安装Edge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85anki"><span class="toc-number">5.16.</span> <span class="toc-text">安装anki</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85xmind2020"><span class="toc-number">5.17.</span> <span class="toc-text">安装xmind2020</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%BE%AE%E4%BF%A1"><span class="toc-number">5.18.</span> <span class="toc-text">安装微信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85teams"><span class="toc-number">5.19.</span> <span class="toc-text">安装teams</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85blechbit"><span class="toc-number">5.20.</span> <span class="toc-text">安装blechbit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Albert"><span class="toc-number">5.21.</span> <span class="toc-text">安装Albert</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE%EF%BC%9A"><span class="toc-number">5.21.1.</span> <span class="toc-text">软件设置：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">5.21.2.</span> <span class="toc-text">使用方式：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Easystroke"><span class="toc-number">5.22.</span> <span class="toc-text">安装Easystroke</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE"><span class="toc-number">5.22.1.</span> <span class="toc-text">软件设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%89%8B%E5%8A%BF"><span class="toc-number">5.22.2.</span> <span class="toc-text">常用手势</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Wps"><span class="toc-number">5.23.</span> <span class="toc-text">安装Wps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Latex"><span class="toc-number">5.24.</span> <span class="toc-text">安装Latex</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%9B%BE%E5%BD%A2%E5%8C%96%E5%AE%89%E8%A3%85%E7%95%8C%E9%9D%A2"><span class="toc-number">5.24.1.</span> <span class="toc-text">安装图形化安装界面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%82%E8%BD%BDISO"><span class="toc-number">5.24.2.</span> <span class="toc-text">挂载ISO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">5.24.3.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">5.24.4.</span> <span class="toc-text">添加环境变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">5.24.5.</span> <span class="toc-text">测试环境变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%B8%85%E5%8D%8E%E9%95%9C%E5%83%8F%E4%B8%BA%E6%9B%B4%E6%96%B0%E6%BA%90"><span class="toc-number">5.24.6.</span> <span class="toc-text">设置清华镜像为更新源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0tlmgr%E5%92%8C%E5%AE%8F%E5%8C%85"><span class="toc-number">5.24.7.</span> <span class="toc-text">更新tlmgr和宏包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E4%BF%84%E8%AF%AD%E6%8A%A5%E9%94%99"><span class="toc-number">5.24.8.</span> <span class="toc-text">编译俄语报错</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E5%AD%97%E4%BD%93"><span class="toc-number">5.24.9.</span> <span class="toc-text">安装字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E5%AD%97%E4%BD%93%E7%BC%93%E5%AD%98"><span class="toc-number">5.24.10.</span> <span class="toc-text">更新字体缓存</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gnome%E6%8F%92%E4%BB%B6"><span class="toc-number">5.25.</span> <span class="toc-text">Gnome插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">7.</span> <span class="toc-text">结语</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/b24d8571.html" title="2021【保姆级教程】Manjaro系统美化和软件安装"><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2021【保姆级教程】Manjaro系统美化和软件安装"/></a><div class="content"><a class="title" href="/posts/b24d8571.html" title="2021【保姆级教程】Manjaro系统美化和软件安装">2021【保姆级教程】Manjaro系统美化和软件安装</a><time datetime="2022-07-11T10:30:02.000Z" title="发表于 2022-07-11 13:30:02">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/52cd05e.html" title="2021【保姆级教程】Win+Manjaro双系统双硬盘安装"><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E5%AE%89%E8%A3%85/35.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2021【保姆级教程】Win+Manjaro双系统双硬盘安装"/></a><div class="content"><a class="title" href="/posts/52cd05e.html" title="2021【保姆级教程】Win+Manjaro双系统双硬盘安装">2021【保姆级教程】Win+Manjaro双系统双硬盘安装</a><time datetime="2022-07-10T20:22:00.000Z" title="发表于 2022-07-10 23:22:00">2022-07-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/1.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 筱筱琪</div><div class="footer_custom_text">很高兴认识你 😀</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div></div></body></html>
