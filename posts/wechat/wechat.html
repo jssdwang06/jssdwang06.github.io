@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>导出小米6微信记录并词云分析 | 筱筱琪</title><meta name="keywords" content="python"><meta name="author" content="筱筱琪"><meta name="copyright" content="筱筱琪"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="导出小米手机微信记录并词云分析 词云分析我最早应该是在2018&#x2F;2019年接触过，但那时候代码没写过多少，一晃都2021年了… 2021年04月07日，无意间想起了b站看到过一个农学专业的Up主说给导师做过数据&#x2F;词云分析，正好最近又在学Python(说来惭愧😔)，脑门一热又想搞搞词云分析了，然后就搜了篇教程，对着敲了敲，熟悉了下流程，但开始的时间比较晚了，所以当天并没有看完。 2021年04月0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="导出小米6微信记录并词云分析">
+<meta property="og:url" content="http://example.com/posts/wechat/wechat.html">
+<meta property="og:site_name" content="筱筱琪">
+<meta property="og:description" content="导出小米手机微信记录并词云分析 词云分析我最早应该是在2018&#x2F;2019年接触过，但那时候代码没写过多少，一晃都2021年了… 2021年04月07日，无意间想起了b站看到过一个农学专业的Up主说给导师做过数据&#x2F;词云分析，正好最近又在学Python(说来惭愧😔)，脑门一热又想搞搞词云分析了，然后就搜了篇教程，对着敲了敲，熟悉了下流程，但开始的时间比较晚了，所以当天并没有看完。 2021年04月0">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/jssdwang06/figure/master/%E5%B0%81%E9%9D%A2/1j.jpg">
+<meta property="article:published_time" content="2021-04-09T11:20:00.000Z">
+<meta property="article:modified_time" content="2022-07-30T11:50:50.747Z">
+<meta property="article:author" content="筱筱琪">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jssdwang06/figure/master/%E5%B0%81%E9%9D%A2/1j.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/wechat/wechat"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 筱筱琪","link":"链接: ","source":"来源: 筱筱琪","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '导出小米6微信记录并词云分析',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2022-07-30 14:50:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/xxq.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/secret/"><i class="fa-fw fas fa-bell"></i><span> 悄悄话</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/jssdwang06/figure/master/%E5%B0%81%E9%9D%A2/1j.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">筱筱琪</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/secret/"><i class="fa-fw fas fa-bell"></i><span> 悄悄话</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">导出小米6微信记录并词云分析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-09T11:20:00.000Z" title="发表于 2021-04-09 14:20:00">2021-04-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-07-30T11:50:50.747Z" title="更新于 2022-07-30 14:50:50">2022-07-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AF%8D%E4%BA%91%E5%88%86%E6%9E%90/">词云分析</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>导出小米手机微信记录并词云分析</h1>
+<p>词云分析我最早应该是在2018/2019年接触过，但那时候代码没写过多少，一晃都2021年了…</p>
+<p>2021年04月07日，无意间想起了<code>b站</code>看到过一个农学专业的<code>Up</code>主说给导师做过数据/词云分析，正好最近又在学<code>Python</code>(说来惭愧😔)，脑门一热又想搞搞词云分析了，然后就搜了篇<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wkfvawl/p/11585986.html">教程</a>，对着敲了敲，熟悉了下流程，但开始的时间比较晚了，所以当天并没有看完。</p>
+<p>2021年04月08日(也就是昨天)，早上一起来就想着既然学了词云分析倒不如对自己微信里的聊天记录分析分析，看看经常发哪些信息。说搞就搞，当然第一步要拿出浏览器先搜搜看有没有人做过，果然还真有人做过了，但看的也是云里雾里的，有说要用xx软件的也有说手机需要root…，眼花缭乱…这时间过得真快啊，一晃时间都中午了，我也快撑不住了，得赶紧速战速决了，想着再试试不行的话就改天再说。最后，在快要放弃的时候找到了一两篇比较靠谱的文章，抱着试一试的心态开始了复现。数据库的密码通过<code>IMEI和uin</code>进行<code>md5运算</code>死活不对，搞得我都怀疑文章有问题了，但文章最后也拿到数据了，后来我又尝试了另外的解密方式，终于在快要放弃的两、三小时后，成功拿到了数据并进行了词云分析😁。</p>
+<p>2021年04月09日，整理下思路写下这篇文章，一来记录下自己的复现过程，二来为后续学习者避开弯路，节省时间。</p>
+<h2 id="前言">前言</h2>
+<p>我的手机是小米6 (用了四年了，依然顽强👍，妥妥米6钉子户)，其他手机操作可能略有不同。</p>
+<ol>
+<li>
+<p>本地电脑备份拿到手机<code>微信(com.tencent.mm).bak</code>备份文件。</p>
+</li>
+<li>
+<p>解压备份文件拿到<code>CompatibleInfo.cfg</code>，<code>systemInfo.cfg</code>和<code>EnMicroMsg.db</code>数据库文件。</p>
+</li>
+<li>
+<p>进行<code>EnMicroMsg.db</code>数据库解密。</p>
+</li>
+<li>
+<p>导出<code>message</code>数据到<code>Excel</code>中。</p>
+</li>
+<li>
+<p>去除<code>message</code>中的无效信息。</p>
+</li>
+<li>
+<p><code>python</code>进行词云分析。</p>
+</li>
+</ol>
+<h2 id="手机备份">手机备份</h2>
+<p>首先在手机<code>设置</code>中找到<code>备份和重置</code>，选择<code>本地备份</code></p>
+<img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/0.jpg" style="zoom:50%;" />
+<p>输入密码后选择<code>新建备份</code></p>
+<img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/1.jpg" style="zoom:50%;" />
+<p>取消<code>系统数据</code>和<code>软件程序</code>的勾选，并点击<code>软件程序</code>右侧的<code>&gt;</code>选择<code>微信</code>，然后点击<code>开始备份</code></p>
+<img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/2.jpg" style="zoom:50%;" />
+<p>备份开始，时间有点长需要稍等片刻</p>
+<img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/3.jpg" style="zoom:50%;" />
+<p>等备份完成后，通过<code>USB数据线</code>将手机连接到电脑上并在手机上选择<code>传输文件(MTP)</code></p>
+<h2 id="复制手机备份文件">复制手机备份文件</h2>
+<p>首先在电脑上新建<code>wechat</code>文件用以存放备份文件和解压缩后的文件</p>
+<p>备份文件在手机目录<code>MIUI\backup\AllBackup\时间命名的文件夹</code>中双击打开复制<code>微信(com.tencent.mm).bak</code>(这个文件就是微信的备份文件)文件到电脑上，并通过<code>解压缩文件</code>(这里使用的是<code>7zip</code>，推荐)打开，按以下路径找到相对的文件并复制到<code>wechat</code>文件中</p>
+<p><code>apps</code>-&gt;<code>com.tencent.mm</code>-&gt;<code>r</code>-&gt;<code>MicroMsg</code>-&gt;<code>systemInfo.cfg</code></p>
+<p><code>apps</code>-&gt;<code>com.tencent.mm</code>-&gt;<code>r</code>-&gt;<code>MicroMsg</code>-&gt;<code>CompatibleInfo.cfg</code></p>
+<p><code>apps</code>-&gt;<code>com.tencent.mm</code>-&gt;<code>r</code>-&gt;<code>MicroMsg</code>-&gt;<code>字母数字随机组成的用户文件(每个人不一样，一般大小为最大的文件)</code>-&gt;<code>EnMicroMsg.db</code></p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/4.png" alt=""></p>
+<p>最后拿到的文件</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/5.png" alt=""></p>
+<h2 id="EnMicroMsg-db解密"><code>EnMicroMsg.db</code>解密</h2>
+<p>这里提供两种方法，其他方法请参考<code>参考1</code></p>
+<p>首先声明：我是通过方法2成功拿到的数据库密码，方法1试了很多次都提示不对，推荐使用方法2，简单粗暴…</p>
+<ol>
+<li>
+<p>手机<code>IMEI</code>+<code>uin</code>(微信用户id <code>userinformation</code>) 将拼接的字符串<a target="_blank" rel="noopener" href="http://tool.chinaz.com/tools/md5.aspx">MD5加密</a>取<code>前7位</code>[参考1]</p>
+<blockquote>
+<p>如<code>IMEI</code>为<code>123456</code>，<code>uin</code>为<code>abc</code>，则拼接后的字符串为<code>123456abc</code> 将此字符串用<a target="_blank" rel="noopener" href="http://tool.chinaz.com/tools/md5.aspx">MD5加密</a>(32位)后为<code>df10ef8509dc176d733d59549e7dbfaf</code> 那么前7位<code>df10ef8</code> 就是数据库的密码，由于有的手机是双卡，有多个<code>IMEI</code>，或者当手机获取不到<code>IMEI</code>时会用默认字符串<code>1234567890ABCDEF</code>来代替，由于种种原因，并不是所有人都能得出正确的密码，我试了很多次都没有成功后来放弃了:(</p>
+<p><code>uin</code>在<code>\apps\com.tencent.mm\sp\auth_info_key_prefs</code>中，用<code>记事本</code>打开找到<code>&lt;int name=&quot;_auth_uin&quot; value=&quot;xxxxxxxxxx&quot; /&gt;</code>，<code>xxxxxxxxxx</code>就是<code>uin</code></p>
+</blockquote>
+</li>
+<li>
+<p>反序列化<code>CompatibleInfo.cfg</code>和<code>systemInfo.cfg</code>[参考1]</p>
+<blockquote>
+<p>不管是否有多个<code>IMEI</code> ，或者是微信客户端没有获取到<code>IMEI</code>，而使用默认字符串代替，微信客户端都会将使用的信息保存在<code>MicroMsg</code>文件夹下面的<code>CompatibleInfo.cfg</code>和<code>systemInfo.cfg</code>文件中，可以通过这两个文件来得到正确的密码，但是这两个文件需要处理才能看到信息。</p>
+</blockquote>
+</li>
+</ol>
+<p>具体操作如下：</p>
+<p>在<code>wechat</code>文件中新建<code>IMEI.java</code>文件并复制以下代码保存</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.ObjectInputStream;</span><br><span class="line"><span class="keyword">import</span> java.security.MessageDigest;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IMEI</span> &#123;</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">   <span class="type">ObjectInputStream</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(</span><br><span class="line">     args[<span class="number">0</span>]));</span><br><span class="line">   <span class="type">Object</span> <span class="variable">DL</span> <span class="operator">=</span> in.readObject();</span><br><span class="line">   <span class="type">HashMap</span> <span class="variable">hashWithOutFormat</span> <span class="operator">=</span> (HashMap) DL;</span><br><span class="line">   <span class="type">ObjectInputStream</span> <span class="variable">in1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(</span><br><span class="line">     args[<span class="number">1</span>]));</span><br><span class="line">   <span class="type">Object</span> <span class="variable">DJ</span> <span class="operator">=</span> in1.readObject();</span><br><span class="line">   <span class="type">HashMap</span> <span class="variable">hashWithOutFormat1</span> <span class="operator">=</span> (HashMap) DJ;</span><br><span class="line">   <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> String.valueOf(hashWithOutFormat1.get(Integer</span><br><span class="line">     .valueOf(<span class="number">258</span>))); <span class="comment">// 取手机的IMEI</span></span><br><span class="line">   System.out.println(<span class="string">&quot;The IMEI is : &quot;</span> + s);</span><br><span class="line">   <span class="type">String</span> <span class="variable">uin</span> <span class="operator">=</span> String.valueOf(hashWithOutFormat.get(Integer.valueOf(<span class="number">1</span>)));</span><br><span class="line">   System.out.println(<span class="string">&quot;The uin is : &quot;</span> + uin);</span><br><span class="line">   s = s + uin; <span class="comment">//合并到一个字符串</span></span><br><span class="line">   s = encode(s); <span class="comment">// hash</span></span><br><span class="line">   System.out.println(<span class="string">&quot;The Key is : &quot;</span> + s.substring(<span class="number">0</span>, <span class="number">7</span>));</span><br><span class="line">   in.close();</span><br><span class="line">   in1.close();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">   e.printStackTrace();</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">encode</span><span class="params">(String content)</span></span><br><span class="line">  &#123;</span><br><span class="line">   <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="type">MessageDigest</span> <span class="variable">digest</span> <span class="operator">=</span> MessageDigest.getInstance(<span class="string">&quot;MD5&quot;</span>);</span><br><span class="line">    digest.update(content.getBytes());</span><br><span class="line">    <span class="keyword">return</span> getEncode32(digest);</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="keyword">catch</span> (Exception e)</span><br><span class="line">   &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> String <span class="title function_">getEncode32</span><span class="params">(MessageDigest digest)</span></span><br><span class="line">  &#123;</span><br><span class="line">   <span class="type">StringBuilder</span> <span class="variable">builder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">   <span class="keyword">for</span> (<span class="type">byte</span> b : digest.digest())</span><br><span class="line">   &#123;</span><br><span class="line">    builder.append(Integer.toHexString((b &gt;&gt; <span class="number">4</span>) &amp; <span class="number">0xf</span>));</span><br><span class="line">    builder.append(Integer.toHexString(b &amp; <span class="number">0xf</span>));</span><br><span class="line">   &#125;</span><br><span class="line">    <span class="keyword">return</span> builder.toString();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来的操作，电脑需要有<code>java</code>环境，<a target="_blank" rel="noopener" href="https://www.java.com/zh-CN/download/help/download_options_zh-cn.html">如果没有请点击这里。</a></p>
+<p>在终端中按顺序执行以下命令，来得到数据库密码。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac IMEI.java</span><br><span class="line">java IMEI systemInfo.cfg CompatibleInfo.cfg</span><br></pre></td></tr></table></figure>
+<p>一切顺利的话会出现图示内容，其中<code>The key is:xxxxxxx</code>就是数据库的密码，一共7位，图片这里进行了处理</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/6.png" alt=""></p>
+<p>将<code>EnMicroMsg.db</code>文件拖入到<code>sqlcipher</code>软件中，输入从终端获取到的密码点击<code>OK</code>即可打开文件</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/7.png" alt=""></p>
+<p>打开后的界面如下图示：</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/8.png" alt=""></p>
+<h2 id="导出数据">导出数据</h2>
+<p>点击左上角<code>File</code>-&gt;<code>Export</code>-&gt;<code>Table as CSV file</code></p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/9.png" alt=""></p>
+<p>弹出的<code>Table name</code>选择<code>message</code>，点击<code>Export</code>，选择保存路径后输入文件名称即可</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/10.png" alt=""></p>
+<p>最后打开数据文件如图示</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/11.png" alt=""></p>
+<p>聊天内容在<code>content</code>列中，联系人在<code>talker</code>列中</p>
+<h2 id="数据处理">数据处理</h2>
+<p>将<code>content</code>内容复制到<code>message.txt</code>中</p>
+<p>新建<code>process_wechat.py</code>文件，复制以下代码并保存</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">input_filename</span>):</span><br><span class="line">    fin = <span class="built_in">open</span>(input_filename, <span class="string">&quot;r&quot;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line">    fout = <span class="built_in">open</span>(<span class="string">&quot;__&quot;</span> + input_filename, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&#x27;utf8&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> fin.readlines():</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(line) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">if</span> line[<span class="number">0</span>] == <span class="string">&#x27;&lt;&#x27;</span> <span class="keyword">or</span> line[<span class="number">0</span>] == <span class="string">&#x27;\&quot;&#x27;</span> <span class="keyword">or</span> line[<span class="number">0</span>] == <span class="string">&quot;	&quot;</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                fout.write(line)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) == <span class="number">2</span>:</span><br><span class="line">        main(sys.argv[<span class="number">1</span>])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;[usage] &lt;input&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>终端执行以下代码进行数据处理，这时候会产生一个<code>__message.txt</code>，这个文件就是处理完的聊天记录了</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 process_wechat.py message.txt</span><br></pre></td></tr></table></figure>
+<h2 id="词云分析">词云分析</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> wordcloud</span><br><span class="line"><span class="keyword">import</span> imageio</span><br><span class="line"><span class="keyword">import</span> jieba  <span class="comment"># 中文分词</span></span><br><span class="line">jieba.setLogLevel(jieba.logging.INFO)  <span class="comment"># jieba不报错</span></span><br><span class="line"></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;__message.txt&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="comment">#导入文件</span></span><br><span class="line">txt = f.read()</span><br><span class="line">txtlist = jieba.lcut(txt)</span><br><span class="line">string = <span class="string">&#x27;&#x27;</span>.join(txtlist)</span><br><span class="line"></span><br><span class="line">mk = imageio.imread(<span class="string">&#x27;pic.png&#x27;</span>)  <span class="comment"># 导入外部词云图片</span></span><br><span class="line">w = wordcloud.WordCloud(</span><br><span class="line">     height=<span class="number">1000</span>,</span><br><span class="line">     width=<span class="number">1200</span>,</span><br><span class="line">     background_color=<span class="string">&#x27;white&#x27;</span>,</span><br><span class="line">     font_path=<span class="string">&#x27;msyh.ttc&#x27;</span>,</span><br><span class="line">     mask=mk,  <span class="comment"># 外部词云图片</span></span><br><span class="line">     scale=<span class="number">10</span>, <span class="comment"># 更改清晰度</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">w.generate(string)</span><br><span class="line">w.to_file(<span class="string">&#x27;output.png&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>得到词云图 (这里聊天内容稍微进行了处理)</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Xiaomi/12.png" alt=""></p>
+<h2 id="参考文章">参考文章</h2>
+<p><a target="_blank" rel="noopener" href="https://github.com/Heyxk/notes/issues/1">小米手机提取微信聊天记录数据库</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/77418711">微信聊天记录导出为电脑txt文件教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/fly-dragon211/Wechat-message-analysis">微信聊天记录导出(2020新版)</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">筱筱琪</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/wechat/wechat.html">http://example.com/posts/wechat/wechat.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">筱筱琪</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/jssdwang06/figure/master/%E5%B0%81%E9%9D%A2/1j.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/b24d8571/b24d8571.html"><img class="prev-cover" src="https://raw.githubusercontent.com/jssdwang06/figure/master/hexo/x8.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">2021【保姆级教程】Manjaro系统美化和软件安装</div></div></a></div><div class="next-post pull-right"><a href="/posts/52cd05e/52cd05e.html"><img class="next-cover" src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro1/35.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2021【保姆级教程】Win+Manjaro双系统双硬盘安装</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/xxq.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">筱筱琪</div><div class="author-info__description">Stay hungry | Stay foolish</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jssdwang06"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jssdwang06" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">由于丢失了原博客源文件且没有备份，故于2022-07-10再次含泪搭建😭</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">导出小米手机微信记录并词云分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E6%9C%BA%E5%A4%87%E4%BB%BD"><span class="toc-number">1.2.</span> <span class="toc-text">手机备份</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%88%B6%E6%89%8B%E6%9C%BA%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.</span> <span class="toc-text">复制手机备份文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EnMicroMsg-db%E8%A7%A3%E5%AF%86"><span class="toc-number">1.4.</span> <span class="toc-text">EnMicroMsg.db解密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="toc-number">1.5.</span> <span class="toc-text">导出数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="toc-number">1.6.</span> <span class="toc-text">数据处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%8D%E4%BA%91%E5%88%86%E6%9E%90"><span class="toc-number">1.7.</span> <span class="toc-text">词云分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="toc-number">1.8.</span> <span class="toc-text">参考文章</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/b2488571/b2488571.html" title="记一次Manjaro启动失败"><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记一次Manjaro启动失败"/></a><div class="content"><a class="title" href="/posts/b2488571/b2488571.html" title="记一次Manjaro启动失败">记一次Manjaro启动失败</a><time datetime="2021-07-27T08:30:02.000Z" title="发表于 2021-07-27 11:30:02">2021-07-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/20210701/20210701.html" title="使用Typora编辑数学公式"><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/%E5%B0%81%E9%9D%A2/5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用Typora编辑数学公式"/></a><div class="content"><a class="title" href="/posts/20210701/20210701.html" title="使用Typora编辑数学公式">使用Typora编辑数学公式</a><time datetime="2021-07-01T16:30:00.000Z" title="发表于 2021-07-01 19:30:00">2021-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b24d8571/b24d8571.html" title="2021【保姆级教程】Manjaro系统美化和软件安装"><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/hexo/x8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2021【保姆级教程】Manjaro系统美化和软件安装"/></a><div class="content"><a class="title" href="/posts/b24d8571/b24d8571.html" title="2021【保姆级教程】Manjaro系统美化和软件安装">2021【保姆级教程】Manjaro系统美化和软件安装</a><time datetime="2021-06-07T08:47:02.000Z" title="发表于 2021-06-07 11:47:02">2021-06-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/wechat/wechat.html" title="导出小米6微信记录并词云分析"><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/%E5%B0%81%E9%9D%A2/1j.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="导出小米6微信记录并词云分析"/></a><div class="content"><a class="title" href="/posts/wechat/wechat.html" title="导出小米6微信记录并词云分析">导出小米6微信记录并词云分析</a><time datetime="2021-04-09T11:20:00.000Z" title="发表于 2021-04-09 14:20:00">2021-04-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/52cd05e/52cd05e.html" title="2021【保姆级教程】Win+Manjaro双系统双硬盘安装"><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro1/35.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2021【保姆级教程】Win+Manjaro双系统双硬盘安装"/></a><div class="content"><a class="title" href="/posts/52cd05e/52cd05e.html" title="2021【保姆级教程】Win+Manjaro双系统双硬盘安装">2021【保姆级教程】Win+Manjaro双系统双硬盘安装</a><time datetime="2021-03-31T08:11:11.000Z" title="发表于 2021-03-31 11:11:11">2021-03-31</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://raw.githubusercontent.com/jssdwang06/figure/master/%E5%B0%81%E9%9D%A2/1j.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 筱筱琪</div><div class="footer_custom_text">很高兴认识你 😀</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script></div></body></html>
