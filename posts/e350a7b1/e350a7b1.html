@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>2022【保姆级教程】含泪搭建hexo博客 | 筱筱琪</title><meta name="keywords" content="Hexo,博客搭建"><meta name="author" content="筱筱琪"><meta name="copyright" content="筱筱琪"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="我和Manjaro（三） 前言  Hexo是一个快速、简洁且高效的博客框架。  本篇教程将手把手带你在Manjaro系统上，使用Hexo + GithubPage从零搭建一个个人博客，教程内容已在Manjaro上实测成功，放心食用！其他系统的也可以参考。  软件安装 安装Node.js 1yay -S nodejs 检查是否安装成功 12node -v18.7.0  # 输出版本号证明安装成功">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022【保姆级教程】含泪搭建hexo博客">
+<meta property="og:url" content="http://example.com/posts/e350a7b1/e350a7b1.html">
+<meta property="og:site_name" content="筱筱琪">
+<meta property="og:description" content="我和Manjaro（三） 前言  Hexo是一个快速、简洁且高效的博客框架。  本篇教程将手把手带你在Manjaro系统上，使用Hexo + GithubPage从零搭建一个个人博客，教程内容已在Manjaro上实测成功，放心食用！其他系统的也可以参考。  软件安装 安装Node.js 1yay -S nodejs 检查是否安装成功 12node -v18.7.0  # 输出版本号证明安装成功">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/jssdwang06/figure/master/cover/13.png">
+<meta property="article:published_time" content="2022-07-11T12:39:24.000Z">
+<meta property="article:modified_time" content="2022-08-11T09:00:17.042Z">
+<meta property="article:author" content="筱筱琪">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="博客搭建">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jssdwang06/figure/master/cover/13.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/e350a7b1/e350a7b1"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 筱筱琪","link":"链接: ","source":"来源: 筱筱琪","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2022【保姆级教程】含泪搭建hexo博客',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2022-08-11 12:00:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/xxq.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/secret/"><i class="fa-fw fas fa-bell"></i><span> 悄悄话</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/jssdwang06/figure/master/cover/13.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">筱筱琪</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 我的</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/secret/"><i class="fa-fw fas fa-bell"></i><span> 悄悄话</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">2022【保姆级教程】含泪搭建hexo博客</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-11T12:39:24.000Z" title="发表于 2022-07-11 15:39:24">2022-07-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-11T09:00:17.042Z" title="更新于 2022-08-11 12:00:17">2022-08-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Hexo/">Hexo</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="我和Manjaro（三）">我和Manjaro（三）</h2>
+<h2 id="前言-4">前言</h2>
+<blockquote>
+<p>Hexo是一个快速、简洁且高效的博客框架。</p>
+</blockquote>
+<p>本篇教程将手把手带你在<code>Manjaro</code>系统上，使用<code>Hexo + GithubPage</code>从零搭建一个个人博客，教程内容已在<code>Manjaro</code>上实测成功，放心食用！其他系统的也可以参考。</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/13.png" alt=""></p>
+<h2 id="软件安装">软件安装</h2>
+<h3 id="安装Node-js">安装Node.js</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S nodejs</span><br></pre></td></tr></table></figure>
+<p>检查是否安装成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">18.7.0  # 输出版本号证明安装成功</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/1.png" alt=""></p>
+<h3 id="安装npm">安装npm</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S npm</span><br></pre></td></tr></table></figure>
+<p>检查是否安装成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm -v </span><br><span class="line">8.16.0 # 输出版本号证明安装成功</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/2.png" alt=""></p>
+<h3 id="hexo安装">hexo安装</h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/3.png" alt=""></p>
+<h3 id="安装部署插件">安装部署插件</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/15.png" alt=""></p>
+<h2 id="本地搭建">本地搭建</h2>
+<p>创建本地文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo</span><br></pre></td></tr></table></figure>
+<p>初始化博客</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd hexo    # 进入文件目录</span><br><span class="line">hexo init  # 博客初始化 (安装所需要的包)</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/4.png" alt=""></p>
+<p>本地启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s	# http://localhost:4000/预览</span><br></pre></td></tr></table></figure>
+<p>按照提示我们用浏览器打开<a target="_blank" rel="noopener" href="http://localhost:4000/">测试网站</a>，打开后如果看到下图内容，则证明本地环境已搭建成功。</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/5.png" alt=""></p>
+<h3 id="新建文章">新建文章</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;第一篇博客&quot; # 新建一个名为第一篇博客.md的文件</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/17.png" alt=""></p>
+<h3 id="文件目录">文件目录</h3>
+<p>到目前为止，博客文件目录如下：</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/18.png" alt=""></p>
+<p>关于博客文件目录，我们目前只需要知道以下几个重要的文件目录即可：</p>
+<p><code>public</code>目录下存放的是我们生成的<strong>静态页面</strong>；</p>
+<p><code>source/_posts</code>目录下存放的是我们写的<strong>文章</strong>；</p>
+<p><code>themes</code>目录下存放的是<strong>博客</strong>的主题；</p>
+<p><code>_config.yml</code>是<strong>博客全局配置</strong>文件；</p>
+<p><code>_config.landscape.yml</code>是<strong>博客主题配置</strong>文件。</p>
+<h2 id="部署到Github">部署到Github</h2>
+<h3 id="安装Git">安装<code>Git</code></h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S git</span><br></pre></td></tr></table></figure>
+<h3 id="配置Git">配置<code>Git</code></h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的Github用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的Github邮箱&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="生成密匙">生成密匙</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的Github邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>三次回车后生成<code>id_rsa.pub</code>文件，这里面存放的就是你的<code>SSH Key</code></p>
+<h3 id="查看密匙">查看密匙</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/6.png" alt=""></p>
+<p>复制粘贴到Github里的SSH</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/7.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/9.png" alt=""></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>当出现<code>Are you sure you want to continue connecting (yes/no/[fingerprint])? </code>输入<code>yes</code>等待，输出<code>Hi xxx! You've successfully authenticated...</code>时即连接成功。</p>
+<h3 id="创建仓库">创建仓库</h3>
+<p>创建一个<code>用户名.github.io</code>的仓库</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/10.png" alt=""></p>
+<p>在<code>VsCode</code>中打开<code>blog</code>文件夹，找到<code>_config.yml</code>文件，找到<code>deploy</code>，按照以下格式进行修改：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:你的用户名/你的用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/11.png" alt=""></p>
+<p>最后执行以下命令：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  # 清除缓存</span><br><span class="line">hexo g      # 生成静态网页</span><br><span class="line">hexo d      # 部署到Github</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/14.png" alt=""></p>
+<p>顺利的话，在浏览器输入：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户名.github.io</span><br></pre></td></tr></table></figure>
+<p>即可跳转到博客界面，如果没有出现，请稍等几分钟后刷新界面！</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/12.png" alt=""></p>
+<h2 id="博客主题">博客主题</h2>
+<p>一个好看的博客当然少不了漂亮的主题啦😁~</p>
+<h3 id="修改主题">修改主题</h3>
+<p><strong>建议修改前做好备份！</strong></p>
+<p>在<code>VsCode</code>中打开<code>blog</code>文件夹，打开<code>_config.yml</code>文件，找到<code>theme</code>字段，修改其值即可，默认是<code>landscape</code>。</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/16.png" alt=""></p>
+<h3 id="主题推荐">主题推荐</h3>
+<p>由于篇幅原因，这里只推荐以下三款，更多主题 👉 <a target="_blank" rel="noopener" href="https://hexo.io/themes/">themes</a>。另外，主题的详细配置建议阅读<strong>官方文档</strong>！</p>
+<h4 id="NexT">NexT</h4>
+<p><code>NexT</code>主题用了都说好，👉 <a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/getting-started.html">NexT 使用文档</a></p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/19.png" alt=""></p>
+<h4 id="Butterfly">Butterfly</h4>
+<p>👉 <a target="_blank" rel="noopener" href="https://butterfly.js.org/">Butterfly文档</a></p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/20.png" alt=""></p>
+<p>这款主题目前是我在用的，稍微配置一下：</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/21.png" alt=""></p>
+<h4 id="Webstack">Webstack</h4>
+<p>如果你想搭建一个基于博客的导航界面，那么<a target="_blank" rel="noopener" href="https://github.com/HCLonely/hexo-theme-webstack">一个基于webstack的hexo主题</a>再适合不过了。</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/22.png" alt=""></p>
+<h2 id="博客备份">博客备份</h2>
+<p>新建一个<code>blog</code>的私有仓库</p>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/23.png" alt=""></p>
+<p>仓库创建完成后，在<code>VSCode</code>终端中执行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init 						# 初始化仓库</span><br><span class="line">git add . 						# 添加文件到暂存区</span><br><span class="line">git commit -m &quot;first commit&quot;	  # 将暂存区内容添加到仓库</span><br><span class="line">git branch -M main				 # 重命名分支为main</span><br><span class="line">git remote add origin https://github.com/xxxxx/blog.git # 添加到远程版本库</span><br><span class="line">git push -u origin main			  # 提交到Github</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro3/24.png" alt=""></p>
+<h2 id="常用命令">常用命令</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;postName&quot;   # 新建文章</span><br><span class="line">hexo clean  	    # 清除缓存</span><br><span class="line">hexo g      	    # 生成静态网页</span><br><span class="line">hexo s      	    # 本地预览</span><br><span class="line">hexo d      	    # 部署到Github</span><br></pre></td></tr></table></figure>
+<h2 id="参考-2">参考</h2>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000002632530">hexo常用命令笔记</a></p>
+<p><a target="_blank" rel="noopener" href="https://yuchen-lea.github.io/2016-01-18-hexo-dir-struct/">hexo目录结构小探</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/git/git-branch.html">Git 分支管理 </a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/afei__/article/details/51567155">git branch用法总结，查看、新建、删除、重命名</a></p>
+<p>最后，再推荐个详细的视频教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1aV411p7Bc/?spm_id_from=333.788&amp;vd_source=b63df671d311b520be1035e151686519">使用Hexo搭建个人博客手摸手教学</a></p>
+<h2 id="结语-2">结语</h2>
+<p>至此，我们已经完成了Manjaro系统下的博客搭建。</p>
+<p>下篇教程将手把手教你如何搭建自己的免费图床，也是Manjaro系列的最后一期啦，敬请期待！</p>
+<p>最后，感谢你看到这里！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">筱筱琪</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/e350a7b1/e350a7b1.html">http://example.com/posts/e350a7b1/e350a7b1.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">筱筱琪</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/jssdwang06/figure/master/cover/13.png" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/picgo2022/picgo2022.html"><img class="prev-cover" src="https://raw.githubusercontent.com/jssdwang06/figure/master/cover/PicGoGithub.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">2022【保姆级教程】手把手带你使用PicGo+Github搭建自己的免费图床</div></div></a></div><div class="next-post pull-right"><a href="/posts/b2488571/b2488571.html"><img class="next-cover" src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">记一次Manjaro启动失败</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/xxq.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">筱筱琪</div><div class="author-info__description">Stay hungry | Stay foolish</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jssdwang06"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/jssdwang06" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">由于丢失了原博客源文件且没有备份，故于2022-07-10再次含泪搭建😭</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E5%92%8CManjaro%EF%BC%88%E4%B8%89%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">我和Manjaro（三）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80-4"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">软件安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Node-js"><span class="toc-number">3.1.</span> <span class="toc-text">安装Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85npm"><span class="toc-number">3.2.</span> <span class="toc-text">安装npm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo%E5%AE%89%E8%A3%85"><span class="toc-number">3.3.</span> <span class="toc-text">hexo安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E6%8F%92%E4%BB%B6"><span class="toc-number">3.4.</span> <span class="toc-text">安装部署插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA"><span class="toc-number">4.</span> <span class="toc-text">本地搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%96%87%E7%AB%A0"><span class="toc-number">4.1.</span> <span class="toc-text">新建文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95"><span class="toc-number">4.2.</span> <span class="toc-text">文件目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0Github"><span class="toc-number">5.</span> <span class="toc-text">部署到Github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Git"><span class="toc-number">5.1.</span> <span class="toc-text">安装Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEGit"><span class="toc-number">5.2.</span> <span class="toc-text">配置Git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E5%AF%86%E5%8C%99"><span class="toc-number">5.3.</span> <span class="toc-text">生成密匙</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%AF%86%E5%8C%99"><span class="toc-number">5.4.</span> <span class="toc-text">查看密匙</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="toc-number">5.5.</span> <span class="toc-text">创建仓库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">6.</span> <span class="toc-text">博客主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98"><span class="toc-number">6.1.</span> <span class="toc-text">修改主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E6%8E%A8%E8%8D%90"><span class="toc-number">6.2.</span> <span class="toc-text">主题推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NexT"><span class="toc-number">6.2.1.</span> <span class="toc-text">NexT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Butterfly"><span class="toc-number">6.2.2.</span> <span class="toc-text">Butterfly</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Webstack"><span class="toc-number">6.2.3.</span> <span class="toc-text">Webstack</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E5%A4%87%E4%BB%BD"><span class="toc-number">7.</span> <span class="toc-text">博客备份</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">8.</span> <span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83-2"><span class="toc-number">9.</span> <span class="toc-text">参考</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD-2"><span class="toc-number">10.</span> <span class="toc-text">结语</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/picgo2022/picgo2022.html" title="2022【保姆级教程】手把手带你使用PicGo+Github搭建自己的免费图床"><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/cover/PicGoGithub.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022【保姆级教程】手把手带你使用PicGo+Github搭建自己的免费图床"/></a><div class="content"><a class="title" href="/posts/picgo2022/picgo2022.html" title="2022【保姆级教程】手把手带你使用PicGo+Github搭建自己的免费图床">2022【保姆级教程】手把手带你使用PicGo+Github搭建自己的免费图床</a><time datetime="2022-08-13T16:10:23.000Z" title="发表于 2022-08-13 19:10:23">2022-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/e350a7b1/e350a7b1.html" title="2022【保姆级教程】含泪搭建hexo博客"><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/cover/13.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022【保姆级教程】含泪搭建hexo博客"/></a><div class="content"><a class="title" href="/posts/e350a7b1/e350a7b1.html" title="2022【保姆级教程】含泪搭建hexo博客">2022【保姆级教程】含泪搭建hexo博客</a><time datetime="2022-07-11T12:39:24.000Z" title="发表于 2022-07-11 15:39:24">2022-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b2488571/b2488571.html" title="记一次Manjaro启动失败"><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/Manjaro/Manjaro%E9%85%8D%E7%BD%AE%E7%BE%8E%E5%8C%96/1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记一次Manjaro启动失败"/></a><div class="content"><a class="title" href="/posts/b2488571/b2488571.html" title="记一次Manjaro启动失败">记一次Manjaro启动失败</a><time datetime="2021-07-27T08:30:02.000Z" title="发表于 2021-07-27 11:30:02">2021-07-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/20210701/20210701.html" title="使用Typora编辑数学公式"><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/%E5%B0%81%E9%9D%A2/5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用Typora编辑数学公式"/></a><div class="content"><a class="title" href="/posts/20210701/20210701.html" title="使用Typora编辑数学公式">使用Typora编辑数学公式</a><time datetime="2021-07-01T16:30:00.000Z" title="发表于 2021-07-01 19:30:00">2021-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b24d8571/b24d8571.html" title="2021【保姆级教程】Manjaro系统美化和软件安装"><img src="https://raw.githubusercontent.com/jssdwang06/figure/master/hexo/x8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2021【保姆级教程】Manjaro系统美化和软件安装"/></a><div class="content"><a class="title" href="/posts/b24d8571/b24d8571.html" title="2021【保姆级教程】Manjaro系统美化和软件安装">2021【保姆级教程】Manjaro系统美化和软件安装</a><time datetime="2021-06-07T08:47:02.000Z" title="发表于 2021-06-07 11:47:02">2021-06-07</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://raw.githubusercontent.com/jssdwang06/figure/master/cover/13.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 筱筱琪</div><div class="footer_custom_text">很高兴认识你 😀</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script></div></body></html>
